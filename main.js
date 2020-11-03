@@ -1,22 +1,21 @@
-
-function nextImg(){
+function nextImg() {
     var activeEl = $('img.active,i.active')
-            activeEl.removeClass('active')
-            var nextEl = activeEl.next()
-            if (activeEl.hasClass('last')) {
-                nextEl = $('img.first, i.first'); 
-            }
-            nextEl.addClass('active') 
+    activeEl.removeClass('active')
+    var nextEl = activeEl.next()
+    if (activeEl.hasClass('last')) {
+        nextEl = $('img.first, i.first');
+    }
+    nextEl.addClass('active')
 }
 
-function previousImg(){
+function previousImg() {
     var activeEl = $('img.active,i.active')
-            activeEl.removeClass('active')
-            var prevEl = activeEl.prev()
-            if (activeEl.hasClass('first')) {
-                prevEl = $('img.last, i.last'); 
-            }
-            prevEl.addClass('active') 
+    activeEl.removeClass('active')
+    var prevEl = activeEl.prev()
+    if (activeEl.hasClass('first')) {
+        prevEl = $('img.last, i.last');
+    }
+    prevEl.addClass('active')
 }
 
 
@@ -25,17 +24,16 @@ function previousImg(){
 
 
 $(document).ready(function () {
-
     // Right Arrow per andare avanti
-    $(document).keydown(function (e) { 
-        if(e.keyCode == 39) {
+    $(document).keydown(function (e) {
+        if (e.keyCode == 39) {
             nextImg()
         }
     });
-    
+
     // Left Arrow per tornare indietro 
-    $(document).keydown(function (key) { 
-        if(key.keyCode == 37) {
+    $(document).keydown(function (key) {
+        if (key.keyCode == 37) {
             previousImg()
         }
     });
@@ -48,7 +46,7 @@ $(document).ready(function () {
         }
     )
 
-    
+
     $('.prev').on('click', function () {
         previousImg()
     })
